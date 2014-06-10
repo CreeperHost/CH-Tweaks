@@ -18,7 +18,7 @@ public class ModEvents {
 		if (isServer(event.entity.worldObj) && event.entity != null && isHostile(event.entity)) {
 			Random randomGenerator = new Random();
 			if(randomGenerator.nextInt(100) > 40) {
-				int amount = (event.entityLiving.getMaxHealth() / SPAWN_RATIO);
+				int amount = ((int) event.entityLiving.getMaxHealth() / SPAWN_RATIO);
 				if(amount > 0) spawnStackAtEntity(event, new ItemStack(Items.gold_nugget, amount));
 			}
 		}
