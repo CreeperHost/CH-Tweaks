@@ -8,15 +8,19 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.living.LivingDeathEvent;
+import java.util.Random;
 
 public class ModEvents {
-	private static final int SPAWN_RATIO = 4;
+	private static final int SPAWN_RATIO = 8;
 
 	@SubscribeEvent
 	public void onLivingDeathEvent(LivingDeathEvent event) {
 		if (isServer(event.entity.worldObj) && event.entity != null && isHostile(event.entity)) {
-			spawnStackAtEntity(event, new ItemStack(Items.gold_nugget, (int) event.entityLiving.getMaxHealth() /
+			Random randomGenerator = new Random();
+			if(randomGenerator.nextInt(100) > 40) {
+				spawnStackAtEntity(event, new ItemStack(Items.gold_nugget, (int) event.entityLiving.getMaxHealth() /
 					SPAWN_RATIO));
+			}
 		}
 	}
 
