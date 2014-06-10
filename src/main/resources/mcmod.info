@@ -1,0 +1,16 @@
+[
+{
+  "modid": "chtweaks",
+  "name": "CH Tweaks",
+  "description": "A tweak mod adding specific things for the CreeperHost community server.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Hanse00"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
