@@ -1,0 +1,22 @@
+#Ignore eclipse workspace files
+.classpath
+.project
+.settings
+eclipse
+
+#Ignore IntelliJ IDEA files
+.idea
+*.iml
+*.ipr
+*.iws
+out
+
+#Ignore minecraft source files
+build
+
+
+#Ignore mc working directory
+run
+
+#Ignore gradle logs
+.gradle
