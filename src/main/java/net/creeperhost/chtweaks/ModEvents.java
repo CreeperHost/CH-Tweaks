@@ -17,9 +17,9 @@ public class ModEvents {
 	public void onLivingDeathEvent(LivingDeathEvent event) {
 		if (isServer(event.entity.worldObj) && event.entity != null && isHostile(event.entity)) {
 			Random randomGenerator = new Random();
-			if(randomGenerator.nextInt(100) > 40) {
+			if(randomGenerator.nextInt(100) > 80) {
 				int amount = ((int) event.entityLiving.getMaxHealth() / SPAWN_RATIO);
-				if(amount > 0) spawnStackAtEntity(event, new ItemStack(Items.gold_nugget, amount));
+				if(amount > 0) spawnStackAtEntity(event, new ItemStack(Items.gold_nugget, randInt(1, amount)));
 			}
 		}
 	}
@@ -36,5 +36,10 @@ public class ModEvents {
 		World world = event.entity.worldObj;
 		EntityItem item = new EntityItem(world, event.entity.posX, event.entity.posY, event.entity.posZ, stack);
 		world.spawnEntityInWorld(item);
+	}
+	public static int randInt(int min, int max) {
+	    Random rand = new Random();
+	    int randomNum = rand.nextInt((max - min) + 1) + min;
+	    return randomNum;
 	}
 }
